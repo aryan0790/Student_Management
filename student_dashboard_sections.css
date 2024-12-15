@@ -1,0 +1,269 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #eef2f3;
+    color: #333;
+    padding: 0;
+}
+
+h2 {
+    font-size: 28px;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 30px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+table th {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #f39c12;
+    color: white;
+}
+
+table td {
+    color: #555;
+}
+
+table tr:hover {
+    background-color: #f0f8ff;
+}
+
+/* Status Styles */
+td:last-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+td .submitted {
+    background-color: #2ecc71;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+td .not-submitted,
+td .pending {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+td .completed {
+    color: #2ecc71;
+}
+
+/* List Styles */
+.courses-list,
+.notifications-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.course-item,
+.notification-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-item:hover,
+.notification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Section Styles */
+.profile-section {
+    max-width: 350px; /* Set max width for profile section */
+    margin: 0; /* Align to the left */
+    padding: 20px; /* Added padding for better spacing */
+}
+
+
+.task-form {
+    max-width: 350px;
+    margin-left: 15px;
+}
+
+/* Form Styles */
+form {
+    padding: 0; /* Remove padding */
+}
+
+/* Heading Styles */
+form h2 {
+    margin-bottom: 20px;
+    font-size: 24px; /* Larger font size for the heading */
+    color: #f39c12; /* Heading color */
+    text-align: left; /* Left align the heading */
+}
+
+/* Label Styles */
+form label {
+    display: block;
+    margin-bottom: 8px; /* Reduced margin for better spacing */
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Input and Select Styles */
+form input[type="date"],
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Reduced margin for better spacing */
+    border: none; /* Remove borders */
+    border-bottom: 2px solid #ccc; /* Underline inputs */
+    background-color: transparent; /* Transparent background */
+    font-size: 16px;
+    color: #333333;
+    transition: border-bottom 0.3s ease;
+}
+
+form input[type="date"]:focus,
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form textarea,
+form select:focus {
+    border-bottom: 2px solid #f39c12; /* Change underline color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 5px; /* Spacing between checkbox and label */
+    margin-bottom: 20px;
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Button Styles */
+form button {
+    background-color: transparent; /* Transparent background */
+    color: #f39c12;
+    padding: 10px 20px;
+    border: 2px solid #f39c12; /* Border with button color */
+    border-radius: 5px; /* Slight rounding for the button */
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #f39c12; /* Solid color on hover */
+    color: #ffffff;
+}
+
+.back-to-task {
+    display: inline-block; /* Makes it behave like a button */
+    background-color: #f39c12; /* Use your primary color */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 20px; /* Space below the button */
+    transition: background 0.3s ease; /* Smooth background change */
+}
+
+.back-to-task:hover {
+    background-color: #e67e22; /* Change color on hover */
+}
+
+.message {
+    margin-bottom: 20px; /* Space below the message */
+    font-size: 18px; /* Font size for messages */
+    color: #f39c12; /* Use primary color for message */
+    text-align: left; /* Center align the message */
+}
+
+/* Alerts */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+
+    button {
+        padding: 10px 15px; /* Adjust button padding for smaller screens */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    th,
+    td {
+        padding: 10px 15px;
+    }
+
+    .courses-list,
+    .notifications-list {
+        grid-template-columns: 1fr;
+    }
+
+    .course-item,
+    .notification-item {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}

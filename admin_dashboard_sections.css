@@ -1,0 +1,156 @@
+/* Students Table Styles */
+table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Remove space between borders */
+    margin-top: 20px; /* Margin above the table */
+    background-color: #ffffff; /* White background for the table */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    border-radius: 10px; /* More rounded corners */
+    overflow: hidden; /* Ensures rounded corners are visible */
+}
+
+th, td {
+    padding: 15px 20px; /* Increased padding for better spacing */
+    text-align: left; /* Left align text */
+    border-bottom: 1px solid #e2e2e2; /* Bottom border for rows */
+}
+
+th {
+    background-color: #f39c12; /* Header background color */
+    color: #ffffff; /* Header text color */
+    font-weight: bold; /* Bold text for headers */
+    text-transform: uppercase; /* Uppercase headers for emphasis */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+tr {
+    transition: background-color 0.3s; /* Smooth transition for row hover */
+}
+
+tr:hover {
+    background-color: #f0f8ff; /* Slightly lighter gray for row hover */
+}
+
+a {
+    color: #f39c12; /* Updated link color from extracted palette */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+a:hover {
+    background-color: #e67e22; /* Updated hover background color from extracted palette */
+    color: #ffffff; /* Keep text color white on hover */
+}
+
+/* Button Styles */
+.add-btn {
+    display: inline-block; /* Inline block for buttons */
+    padding: 10px 15px; /* Padding for buttons */
+    background-color: #f39c12; /* Button color */
+    color: #ffffff; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Margin below button */
+    transition: background 0.3s ease; /* Smooth transition */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.add-btn:hover {
+    background-color: #e67e22; /* Change button color on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    th, td {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .add-btn {
+        width: 100%; /* Full width for buttons on smaller screens */
+    }
+}
+
+/* Accessibility: Focus Styles */
+a:focus, .add-btn:focus {
+    outline: 2px solid #f39c12; /* Focus outline for accessibility */
+    outline-offset: 2px; /* Space between the outline and the element */
+}
+
+/* Form Styles */
+form {
+    padding: 0; /* Remove padding */
+    max-width: 350px;
+    border-radius: 10px; /* Soft rounded corners */
+}
+
+form h3 {
+    margin-bottom: 20px;
+    font-size: 24px; /* Larger font size for the heading */
+    color: #f39c12; /* Heading color */
+    text-align: left; /* Left align the heading */
+}
+
+/* Label Styles */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Input, Select Styles */
+form input[type="date"],
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none; /* Remove borders */
+    border-bottom: 2px solid #ccc; /* Underline inputs */
+    background-color: transparent; /* Transparent background */
+    font-size: 16px;
+    color: #333333;
+    transition: border-bottom 0.3s ease;
+}
+
+form input[type="date"]:focus,
+form select:focus {
+    border-bottom: 2px solid #f39c12; /* Change underline color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button Styles */
+form button {
+    background-color: transparent; /* Transparent background */
+    color: #f39c12;
+    padding: 10px 20px;
+    border: 2px solid #f39c12; /* Border with button color */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #f39c12; /* Solid color on hover */
+    color: #ffffff;
+}
+
+/* Error Message Styling */
+form .error {
+    color: red;
+    margin-bottom: 20px;
+}
+
+/* Responsive Form Adjustments */
+@media (max-width: 768px) {
+    form input[type="date"],
+    form select,
+    form button {
+        font-size: 14px;
+    }
+}
+
+

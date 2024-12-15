@@ -1,0 +1,206 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #eef2f3; /* Soft background color */
+    color: #333;
+    line-height: 1.2;
+}
+
+/* Dashboard Container */
+.dashboard {
+    display: flex;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px; /* Fixed width for sidebar */
+    background-color: #1c1c1c; /* Darker background for sidebar */
+    padding: 20px; /* Padding for sidebar */
+    height: 100vh; /* Full height */
+    position: fixed; /* Fixed position */
+    overflow-y: auto; /* Scrollable if content overflows */
+    transition: width 0.3s; /* Smooth transition for width */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Spacing below title */
+    font-weight: 600;
+    font-size: 1.6rem; /* Larger font size */
+    color: #f39c12; /* Updated color for visibility */
+    position: relative; /* Position for pseudo-element */
+}
+
+/* Adding a pseudo-element for decorative underline */
+.sidebar h2::after {
+    content: ''; /* Empty content for pseudo-element */
+    display: block; /* Make it a block */
+    width: 30%; /* Width of the underline */
+    height: 2px; /* Height of the underline */
+    background: linear-gradient(to right, #f39c12, #e67e22); /* Gradient for underline */
+    margin: 10px auto 0; /* Center and add margin */
+    border-radius: 5px; /* Rounded edges for the underline */
+    transition: width 0.3s ease-in-out; /* Transition for hover effect */
+}
+
+/* Add a hover effect to expand underline */
+.sidebar h2:hover::after {
+    width: 70%; /* Expand underline on hover */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0; /* Increased margin */
+}
+
+.sidebar ul li a {
+    color: #ecf0f1; /* Light color for links */
+    text-decoration: none;
+    padding: 15px 20px; /* Padding for links */
+    border-radius: 25px; /* More rounded corners */
+    display: block;
+    transition: background 0.3s ease; /* Smooth transition */
+}
+
+.sidebar ul li a:hover {
+    background: #f39c12; /* Bright color on hover */
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    margin-left: 280px; /* Margin to the right of sidebar */
+    padding: 30px; /* Padding for main content */
+    background-color: #ffffff; /* White background for main content */
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Spacing below header */
+}
+
+/* Alert Styles */
+.alert.alert-success {
+    background-color: #d4edda; /* Light green for success alert */
+    color: #155724; /* Dark green text */
+    padding: 10px; /* Padding for alert */
+    border-radius: 5px; /* Rounded corners for alert */
+}
+
+/* Total Counts Section */
+.total-counts {
+    margin-bottom: 30px; /* Spacing below total counts */
+}
+
+.counts {
+    display: flex;
+    justify-content: space-between; /* Flex for even spacing */
+}
+
+.count-item {
+    flex: 1; /* Allow equal spacing */
+    background-color: #f7f9fc; /* Light gray background for count items */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for count items */
+    margin-right: 20px; /* Space between items */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center; /* Center text */
+}
+
+.count-item:last-child {
+    margin-right: 0; /* Remove margin for last item */
+}
+
+.count-item h3 {
+    font-size: 1.5rem; /* Font size for headings */
+    margin-bottom: 10px; /* Space below heading */
+    color: #34495e; /* Darker color for headings */
+}
+
+.count-item p {
+    font-size: 2rem; /* Font size for counts */
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Adjust sidebar width for smaller screens */
+        padding: 15px; /* Reduced padding */
+    }
+    
+    .main-content {
+        margin-left: 220px; /* Adjust main content margin */
+        padding: 20px; /* Reduced padding */
+    }
+
+    .header {
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start; /* Align left */
+    }
+
+    .welcome-message {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+}
+
+
+/* Section Styles */
+.notifications-section,
+.upcoming-events-section,
+.recent-activity-section,
+.quick-links-section {
+    margin-top: 30px; /* Spacing above sections */
+    padding: 20px; /* Padding for sections */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Section Title Styles */
+.notifications-section h2,
+.upcoming-events-section h2,
+.recent-activity-section h2,
+.quick-links-section h2 {
+    font-size: 1.5rem; /* Font size for section titles */
+    margin-bottom: 10px; /* Spacing below titles */
+    color: #f39c12; /* Consistent color for section titles */
+}
+
+/* List Styles */
+.notifications-list,
+.upcoming-events-list,
+.recent-activity-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    color: #34495e; /* Darker color for list items */
+}
+
+/* Quick Links Button Styles */
+.quick-links {
+    display: flex; /* Flex layout for buttons */
+    gap: 15px; /* Space between buttons */
+}
+
+.quick-link-button {
+    padding: 12px 20px; /* Padding for buttons */
+    background-color: #f39c12; /* Button color matching the theme */
+    color: #ffffff; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+.quick-link-button:hover {
+    background-color: #e67e22; /* Slightly darker on hover */
+}

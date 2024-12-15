@@ -1,0 +1,290 @@
+/* CSS Variables for Consistency */
+:root {
+    --primary-color: #f39c12; /* Primary action color */
+    --secondary-color: #1c1c1c; /* Sidebar background */
+    --light-bg: #eef2f3; /* Light background for the body */
+    --white-bg: #ffffff; /* White background for main content */
+    --text-color: #333; /* Default text color */
+    --dark-text-color: #34495e; /* Darker text color for headings */
+    --hover-color: #e67e22; /* Color for hover effects */
+    --light-gray: #f7f9fc; /* Light gray background for counts */
+    --shadow: rgba(0, 0, 0, 0.1); /* Shadow color */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.2;
+    scroll-behavior: smooth;
+}
+
+/* Dashboard Container */
+.dashboard {
+    display: flex;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    transition: width 0.3s;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.sidebar h2::after {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-color), var(--hover-color));
+    margin: 10px auto 0;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar h2:hover::after {
+    width: 70%;
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: var(--primary-color);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    height: 100vh;
+    margin-left: 280px;
+    padding: 30px;
+    background-color: var(--white-bg);
+    overflow-y: scroll;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.profile-img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--white-bg);
+    min-width: 160px;
+    box-shadow: 0 2px 10px var(--shadow);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.profile-dropdown:hover .profile-dropdown-content {
+    display: block;
+}
+
+.profile-dropdown a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.profile-dropdown a:hover {
+    background-color: var(--hover-color);
+}
+
+/* Overview Section Styles */
+.overview {
+    margin-bottom: 30px;
+}
+
+.total-counts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.counts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.count-item {
+    flex: 1;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    text-align: center;
+}
+
+.count-item:last-child {
+    margin-right: 0;
+}
+
+.count-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--dark-text-color);
+}
+
+.count-item p {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* Progress Tracker Styles */
+.progress-tracker {
+    margin-bottom: 30px;
+}
+
+.progress-item {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: var(--primary-color);
+    height: 100%;
+}
+
+/* Upcoming Deadlines */
+.upcoming-deadlines {
+    margin-bottom: 30px;
+}
+
+.upcoming-deadlines ul {
+    padding: 0;
+    list-style: none;
+    color: var(--dark-text-color);
+}
+
+/* Attendance Analytics */
+.attendance-analytics {
+    margin-bottom: 30px;
+}
+
+/* Badge Styles */
+.achievement-badges {
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Task Manager Add Task Button */
+.add-task-button {
+    display: inline-block; 
+    background-color: var(--primary-color);
+    color: white; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    margin-bottom: 20px; 
+    transition: background 0.3s ease; 
+}
+
+.add-task-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+    }
+    
+    .main-content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .count-item {
+        margin-right: 10px;
+    }
+}
+
+/* Alerts */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: rgba(212, 237, 218, 0.7);
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: rgba(248, 215, 218, 0.7);
+    color: #721c24;
+}

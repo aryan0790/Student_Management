@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="left-section">
+                <a href="#" class="logo">StudentMS</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="right-section">
+                <a href="#" class="btn login-btn" id="loginBtn">Login</a>
+                <a href="#" class="btn register-btn" id="registerBtn">Register</a>
+            </div>
+            <div class="hamburger">&#9776;</div>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <i class="fas fa-book-open hero-icon"></i>
+            <h1>Welcome to the Student Management System</h1>
+            <p>Manage your academic and event information in one place.</p>
+            <a href="#features" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Our Features</h2>
+            <p class="section-subtitle">Explore the tools and services that help students and admins manage academics
+                and events smoothly.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-user-graduate feature-icon"></i>
+                    <h3>Student Records</h3>
+                    <p>Efficiently manage and access student data, performance, and personal details in one place.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>Attendance Tracking</h3>
+                    <p>Seamlessly monitor student attendance with real-time tracking and automated reports.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Event Management</h3>
+                    <p>Organize and participate in academic and social events with ease.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Login and Register -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="loginClose">&times;</span>
+            <h2>Login</h2>
+            <form action="php/login.php" method="POST">
+                <div class="form-group">
+                    <input type="text" name="usernameOrEmail" placeholder="Username Or Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" name="password" placeholder="Password">
+                    <button type="button" class="toggle-password"
+                        onclick="togglePassword('loginPassword')">Show</button>
+                </div>
+                <button type="submit" name="login" class="btn auth-btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="openRegisterModal">Register here</a>.</p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="registerClose">&times;</span>
+            <h2>Register</h2>
+            <form action="php/register.php" method="POST">
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <select name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" name="password" placeholder="Password" required>
+                    <button type="button" class="toggle-password"
+                        onclick="togglePassword('registerPassword')">Show</button>
+                </div>
+                <button type="submit" name="register" class="btn auth-btn">Create Account</button>
+            </form>
+            <p>Already have an account? <a href="#" id="openLoginModal">Login here</a>.</p>
+        </div>
+    </div>
+
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="faqs">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <i class="fas fa-question-circle"></i>
+                <h3>How do I register as a student or admin?</h3>
+                <p>Click on the "Register" button in the top right corner of the website, fill in your details, and
+                    select the appropriate role (student or admin) during registration.</p>
+            </div>
+            <div class="faq-item">
+                <i class="fas fa-question-circle"></i>
+                <h3>How do I manage my events and academic information?</h3>
+                <p>Once logged in, you can access your dashboard, where you will find sections for managing academic
+                    details, tracking attendance, and registering for events.</p>
+            </div>
+            <div class="faq-item">
+                <i class="fas fa-question-circle"></i>
+                <h3>Can I change my role after registration?</h3>
+                <p>No, roles cannot be changed once assigned during registration. If you have registered with the wrong
+                    role, please contact support for assistance.</p>
+            </div>
+            <div class="faq-item">
+                <i class="fas fa-question-circle"></i>
+                <h3>What should I do if I forget my password?</h3>
+                <p>Click on the "Forgot Password" link on the login modal, and follow the instructions to reset your
+                    password via email.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At StudentMS, we are committed to providing students and administrators with a seamless way to manage
+                academic records, events, and other activities. Our platform is designed to simplify the management
+                process for both students and admins, offering a centralized solution for tracking student progress,
+                managing events, and accessing important academic information.</p>
+            <div class="about-features">
+                <div class="about-item">
+                    <i class="fas fa-star about-icon"></i>
+                    <h3>Our Mission</h3>
+                    <p>To empower educational institutions by providing efficient tools for student management and event
+                        coordination.</p>
+                </div>
+                <div class="about-item">
+                    <i class="fas fa-trophy about-icon"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become the leading platform in educational management by innovating and adapting to the
+                        changing needs of students and admins worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer and Contact Section -->
+    <footer>
+        <div class="container">
+            <div id="contact-us" class="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any queries, feel free to reach out to us. We are here to assist you!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:support@studentms.com">support@studentms.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe contact-icon"></i>
+                        <h3>Address</h3>
+                        <p>123 Student Lane, Academic City, AC 12345</p>
+                    </div>
+                </div>
+            </div>
+            <p>&copy; 2024 Student Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS for Modal -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
